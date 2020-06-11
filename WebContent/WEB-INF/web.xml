@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>Project3</display-name>
+  
+  <!-- 메인화면 매핑 -->
+  
+  <context-param>
+     <param-name>MariaJDBCDriver</param-name>
+     <param-value>org.mariadb.jdbc.Driver</param-value>
+  </context-param>
+  <context-param>
+     <param-name>MariaConnectURL</param-name>
+     <param-value>jdbc:mariadb://localhost:3306/j941223</param-value>
+  </context-param>
+  
+    <servlet>
+     <servlet-name>MainController</servlet-name>
+     <servlet-class>controller.MainCtrl</servlet-class>
+  </servlet>
+  <servlet-mapping>
+     <servlet-name>MainController</servlet-name>
+     <url-pattern>/main/main.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+      <servlet-name>CommunityList</servlet-name>
+      <servlet-class>controller.ListCtrl</servlet-class>
+   </servlet>
+   <servlet-mapping>
+      <servlet-name>CommunityList</servlet-name>
+      <url-pattern>/community/ComList</url-pattern>
+   </servlet-mapping>
+   
+   <servlet>
+      <servlet-name>CommunityWrite</servlet-name>
+      <servlet-class>controller.WriteCtrl</servlet-class>
+   </servlet>
+   <servlet-mapping>
+      <servlet-name>CommunityWrite</servlet-name>
+      <url-pattern>/community/ComWrite</url-pattern>
+   </servlet-mapping>
+  
+  <servlet>
+      <servlet-name>CommunityView</servlet-name>
+      <servlet-class>controller.ViewCtrl</servlet-class>
+   </servlet>
+   <servlet-mapping>
+      <servlet-name>CommunityView</servlet-name>
+      <url-pattern>/community/ComView</url-pattern>
+   </servlet-mapping>
+   
+   <servlet>
+      <servlet-name>CommunityDelete</servlet-name>
+      <servlet-class>controller.DeleteCtrl</servlet-class>
+   </servlet>
+   <servlet-mapping>
+      <servlet-name>CommunityDelete</servlet-name>
+      <url-pattern>/community/ComDelete</url-pattern>
+   </servlet-mapping>
+   
+   <servlet>
+      <servlet-name>CommunityEdit</servlet-name>
+      <servlet-class>controller.EditCtrl</servlet-class>
+   </servlet>
+   <servlet-mapping>
+      <servlet-name>CommunityEdit</servlet-name>
+      <url-pattern>/community/ComEdit</url-pattern>
+   </servlet-mapping>
+   
+   <servlet>
+      <servlet-name>CommunityDownload</servlet-name>
+      <servlet-class>controller.DownloadCtrl</servlet-class>
+   </servlet>
+   <servlet-mapping>
+      <servlet-name>CommunityDownload</servlet-name>
+      <url-pattern>/community/Download</url-pattern>
+   </servlet-mapping>
+  
+  <context-param>
+    <param-name>PAGE_SIZE</param-name>
+    <param-value>10</param-value>
+  </context-param>
+  <context-param>
+    <param-name>BLOCK_PAGE</param-name>
+    <param-value>5</param-value>
+  </context-param>
+ 
+  <session-config>
+    <session-timeout>60</session-timeout>
+  </session-config>
+  
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  
+  
+</web-app>
